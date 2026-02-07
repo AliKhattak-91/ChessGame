@@ -1,0 +1,6 @@
+Useful Keybindings:
+
+Space + r - Build and run your game
+Space + b - Just build (no run)
+Space + e - Toggle file explorer
+Space + ci - Initialize CMake (only needed once per project)
