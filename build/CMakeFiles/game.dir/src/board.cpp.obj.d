@@ -1,5 +1,6 @@
-CMakeFiles/game.dir/src/main.cpp.obj: \
- C:\Users\PC\Desktop\Chess\src\main.cpp \
+CMakeFiles/game.dir/src/board.cpp.obj: \
+ C:\Users\PC\Desktop\Chess\src\board.cpp \
+ C:\Users\PC\Desktop\Chess\src\board.hpp \
  C:/msys64/mingw64/include/SFML/Graphics.hpp \
  C:/msys64/mingw64/include/SFML/Window.hpp \
  C:/msys64/mingw64/include/SFML/System.hpp \
@@ -248,6 +249,4 @@ CMakeFiles/game.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/SFML/Graphics/VertexBuffer.hpp \
  C:/msys64/mingw64/include/c++/15.1.0/iostream \
  C:/msys64/mingw64/include/c++/15.1.0/istream \
- C:/msys64/mingw64/include/c++/15.1.0/bits/istream.tcc \
- C:\Users\PC\Desktop\Chess\src\board.hpp \
- C:\Users\PC\Desktop\Chess\src\pawn.hpp
+ C:/msys64/mingw64/include/c++/15.1.0/bits/istream.tcc

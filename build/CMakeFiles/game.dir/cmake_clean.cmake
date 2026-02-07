@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/game.dir/src/board.cpp.obj"
+  "CMakeFiles/game.dir/src/board.cpp.obj.d"
   "CMakeFiles/game.dir/src/main.cpp.obj"
   "CMakeFiles/game.dir/src/main.cpp.obj.d"
+  "CMakeFiles/game.dir/src/pawn.cpp.obj"
+  "CMakeFiles/game.dir/src/pawn.cpp.obj.d"
   "game.exe"
   "game.exe.manifest"
   "game.pdb"

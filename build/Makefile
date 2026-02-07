@@ -128,6 +128,30 @@ game/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/board.obj: src/board.cpp.obj
+.PHONY : src/board.obj
+
+# target to build an object file
+src/board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/board.cpp.obj
+.PHONY : src/board.cpp.obj
+
+src/board.i: src/board.cpp.i
+.PHONY : src/board.i
+
+# target to preprocess a source file
+src/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/board.cpp.i
+.PHONY : src/board.cpp.i
+
+src/board.s: src/board.cpp.s
+.PHONY : src/board.s
+
+# target to generate assembly for a file
+src/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/board.cpp.s
+.PHONY : src/board.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -152,6 +176,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/pawn.obj: src/pawn.cpp.obj
+.PHONY : src/pawn.obj
+
+# target to build an object file
+src/pawn.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/pawn.cpp.obj
+.PHONY : src/pawn.cpp.obj
+
+src/pawn.i: src/pawn.cpp.i
+.PHONY : src/pawn.i
+
+# target to preprocess a source file
+src/pawn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/pawn.cpp.i
+.PHONY : src/pawn.cpp.i
+
+src/pawn.s: src/pawn.cpp.s
+.PHONY : src/pawn.s
+
+# target to generate assembly for a file
+src/pawn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/src/pawn.cpp.s
+.PHONY : src/pawn.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... game
+	@echo ... src/board.obj
+	@echo ... src/board.i
+	@echo ... src/board.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/pawn.obj
+	@echo ... src/pawn.i
+	@echo ... src/pawn.s
 .PHONY : help
 
 

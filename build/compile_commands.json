@@ -4,5 +4,17 @@
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -std=gnu++17 -o CMakeFiles\\game.dir\\src\\main.cpp.obj -c C:\\Users\\PC\\Desktop\\Chess\\src\\main.cpp",
   "file": "C:/Users/PC/Desktop/Chess/src/main.cpp",
   "output": "CMakeFiles/game.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/PC/Desktop/Chess/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -std=gnu++17 -o CMakeFiles\\game.dir\\src\\board.cpp.obj -c C:\\Users\\PC\\Desktop\\Chess\\src\\board.cpp",
+  "file": "C:/Users/PC/Desktop/Chess/src/board.cpp",
+  "output": "CMakeFiles/game.dir/src/board.cpp.obj"
+},
+{
+  "directory": "C:/Users/PC/Desktop/Chess/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -std=gnu++17 -o CMakeFiles\\game.dir\\src\\pawn.cpp.obj -c C:\\Users\\PC\\Desktop\\Chess\\src\\pawn.cpp",
+  "file": "C:/Users/PC/Desktop/Chess/src/pawn.cpp",
+  "output": "CMakeFiles/game.dir/src/pawn.cpp.obj"
 }
 ]

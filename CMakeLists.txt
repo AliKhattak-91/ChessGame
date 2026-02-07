@@ -13,7 +13,11 @@ set(SFML_STATIC_LIBRARIES FALSE)
 
 find_package(SFML 2.6 COMPONENTS graphics window system REQUIRED)
 
-add_executable(game src/main.cpp)
+add_executable(game 
+    src/main.cpp
+    src/board.cpp
+    src/pawn.cpp
+)
 
 target_link_libraries(game 
     sfml-graphics
