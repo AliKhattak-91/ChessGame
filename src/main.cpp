@@ -16,17 +16,6 @@ int main() {
 
   printBoard();
 
-  // Load Texture;
-  Texture whitePawnTexture;
-  if (!whitePawnTexture.loadFromFile("sprites\\white-pawn.png")) {
-    cout << "Unable to load whitePawnTexture";
-  }
-
-  // Sprite
-  Sprite whitePawn;
-  whitePawn.setTexture(whitePawnTexture);
-  whitePawn.setPosition(200, 800);
-
   while (window.isOpen()) {
     Event event;
     while (window.pollEvent(event)) {
@@ -46,8 +35,6 @@ int main() {
         window.draw(board[i][j]);
       }
     }
-
-    window.draw(whitePawn);
 
     window.display();
   }
