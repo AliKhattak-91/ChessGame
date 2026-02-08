@@ -249,5 +249,5 @@ CMakeFiles/game.dir/src/pawn.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.1.0/iostream \
  C:/msys64/mingw64/include/c++/15.1.0/istream \
  C:/msys64/mingw64/include/c++/15.1.0/bits/istream.tcc \
- C:\Users\PC\Desktop\Chess\src\pawn.hpp \
- C:\Users\PC\Desktop\Chess\src\board.hpp
+ C:\Users\PC\Desktop\Chess\src\board.hpp \
+ C:\Users\PC\Desktop\Chess\src\pawn.hpp
