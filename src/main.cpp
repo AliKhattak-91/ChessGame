@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <ios>
 #include <iostream>
 #include <typeinfo>
 
@@ -10,7 +9,8 @@ using namespace std;
 using namespace sf;
 
 void processInput(RenderWindow &window);
-void printBoard();
+void initializeBoard();
+void initializeWhitePawns();
 
 const int SCREEN_WIDTH = 1200;
 const int SCREEN_HEIGHT = 1000;
@@ -21,9 +21,7 @@ Pawn whitePawn;
 int main() {
   RenderWindow window(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "ChessGame");
 
-  printBoard();
-  chessBoard[6][2].setCurrentPiece(&whitePawn.pawnSprite);
-  whitePawn.currentSquare = &chessBoard[6][2];
+  initializeBoard();
 
   while (window.isOpen()) {
     Event event;
@@ -37,14 +35,17 @@ int main() {
 
     window.clear(Color::Black);
 
-    // Render a Rectangle;
+    // Render the Chess Board;
     for (int i = 0; i < 8; i++) {
       for (int j = 0; j < 8; j++) {
+        // assign indices to the chessboard sqaures
+        chessBoard[i][j].squareIndices = Vector2i(i, j);
         window.draw(chessBoard[i][j].square);
       }
     }
 
     window.draw(whitePawn.pawnSprite);
+
     window.display();
   }
 }
@@ -60,24 +61,28 @@ void processInput(RenderWindow &window) {
 
     Vector2i mousePosI = Mouse::getPosition(window);
 
+    // Piece Selection
     for (int i = 0; i < 8; i++) {
       for (int j = 0; j < 8; j++) {
         if (chessBoard[i][j].square.getGlobalBounds().contains(
                 static_cast<Vector2f>(mousePosI))) {
-
           if (!chessBoard[i][j].isEmpty) {
-            whitePawn.isSelected = true;
+
+            // White Pawn
+            if (chessBoard[i][j].currentHoldingPieceName == "white_pawn") {
+              whitePawn.isSelected = true;
+              cout << "Pawn at square: " << i << " " << j
+                   << " is selected: " << boolalpha << whitePawn.isSelected
+                   << endl;
+            }
+            // The rest of the pieces will go here
+            // .
+            // .
+            // .
           }
 
-          // Moving the pawn
-          if (whitePawn.isSelected) {
-            if (chessBoard[i][j].isEmpty) {
-
-              chessBoard[i][j].removePreviousPiece(whitePawn.currentSquare);
-              chessBoard[i][j].setCurrentPiece(&whitePawn.pawnSprite);
-              whitePawn.currentSquare = &chessBoard[i][j];
-              whitePawn.isSelected = false;
-            }
+          if (chessBoard[i][j].isEmpty) {
+            whitePawn.pawnMovement(chessBoard, &whitePawn, i, j);
           }
         }
       }
@@ -96,12 +101,13 @@ void processInput(RenderWindow &window) {
                 static_cast<Vector2f>(mousePosI))) {
 
           cout << chessBoard[i][j].isEmpty << endl;
+          cout << chessBoard[i][j].currentHoldingPieceName << endl;
         }
       }
     }
   }
 }
-void printBoard() {
+void initializeBoard() {
 
   int offsetX = 0;
   int offsetY = 0;
@@ -112,6 +118,7 @@ void printBoard() {
       Board board;
       board.square.setPosition(200 + offsetX, 100 + offsetY);
 
+      // Chess Board Coloring
       if (i % 2 == 0) {
         // light sq -> dark sq
         if (j % 2 == 0) {
@@ -135,4 +142,13 @@ void printBoard() {
     offsetX = 0;
     offsetY += 100;
   }
+
+  initializeWhitePawns();
+}
+
+void initializeWhitePawns() {
+  // White pawn
+
+  chessBoard[6][2].setCurrentPiece(&whitePawn);
+  whitePawn.currentSquare = &chessBoard[6][2];
 }
