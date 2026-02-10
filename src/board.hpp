@@ -17,7 +17,7 @@ public:
 
   void setCurrentPiece(Pawn *piece);
   void removePreviousPiece(Board *previousSqaure);
-  void getCurrentPiece();
+  void getCurrentPiece(Pawn *piece);
 };
 
 #endif
