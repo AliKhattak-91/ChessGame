@@ -17,6 +17,8 @@ public:
   int pieceOrigionalRow;
   int pieceOrigionalCol = 2;
 
+  bool pawnFirstMove = true;
+
   Pawn();
   void pawnMovement(Board chessBoard[][8], Pawn *piece, int indexX, int indexY);
 };
