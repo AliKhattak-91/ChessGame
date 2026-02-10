@@ -24,12 +24,12 @@ void Board::removePreviousPiece(Board *previousSqaure) {
   }
 }
 
-void Board::getCurrentPiece() {
+void Board::getCurrentPiece(Pawn *piece) {
   // check if the current block has any piece on it
   if (isEmpty) {
     cout << "Sqaure is Empty";
   } else {
     // return the current piece
-    cout << "";
+    cout << piece->pieceName << endl;
   }
 }
