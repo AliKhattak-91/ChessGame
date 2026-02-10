@@ -1,0 +1,16 @@
+# Build output
+build/
+.cache/
+
+# CMake / clangd
+compile_commands.json
+
+# Binaries
+*.exe
+*.dll
+*.o
+*.obj
+
+# Editor junk
+.vscode/
+*.log
