@@ -5,6 +5,7 @@
 
 // Forward declaration for Pawn class
 class Pawn;
+class Bishop;
 
 class Board {
 
@@ -15,7 +16,12 @@ public:
   sf::Vector2i squareIndices;
   Board();
 
-  void setCurrentPiece(Pawn *piece);
+  // Pawn
+  void setCurrentPawn(Pawn *piece);
+
+  // Bishop
+  void setCurrentBishop(Bishop *piece);
+
   void removePreviousPiece(Board *previousSqaure);
   void getCurrentPiece(Pawn *piece);
 };

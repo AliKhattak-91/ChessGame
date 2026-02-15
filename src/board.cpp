@@ -1,4 +1,5 @@
 #include "board.hpp"
+#include "bishop.hpp"
 #include "pawn.hpp"
 #include <iostream>
 
@@ -7,10 +8,18 @@ using namespace sf;
 
 Board::Board() { square.setSize(Vector2(100.0f, 100.0f)); }
 
-void Board::setCurrentPiece(Pawn *piece) {
+void Board::setCurrentPawn(Pawn *piece) {
   if (isEmpty) {
     // set the piece within the block
-    piece->pawnSprite.setPosition(square.getPosition() - Vector2f(10, 10));
+    piece->pawnSprite.setPosition(square.getPosition() - Vector2f(0, 0));
+    currentHoldingPieceName = piece->pieceName;
+    isEmpty = false;
+  }
+}
+
+void Board::setCurrentBishop(Bishop *piece) {
+  if (isEmpty) {
+    piece->whiteBishopSprite.setPosition(square.getPosition() - Vector2f(3, 0));
     currentHoldingPieceName = piece->pieceName;
     isEmpty = false;
   }
