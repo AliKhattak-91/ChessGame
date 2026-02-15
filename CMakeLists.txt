@@ -17,6 +17,7 @@ add_executable(game
     src/main.cpp
     src/board.cpp
     src/pawn.cpp
+    src/bishop.cpp
 )
 
 target_link_libraries(game 
