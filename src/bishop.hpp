@@ -7,7 +7,7 @@ class Board;
 
 class Bishop {
 public:
-  std::string pieceName = "lightSquare_Bishop";
+  std::string pieceName;
 
   sf::Texture whiteBishopTexture;
   sf::Sprite whiteBishopSprite;

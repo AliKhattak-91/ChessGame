@@ -32,19 +32,23 @@ void Bishop::bishopMovement(Board chessBoard[][8], Bishop *piece, int indexX,
     int col = piece->currentPositionY + 1;
 
     while (row >= 0 && col < 8) {
-      if (indexX == row && indexY == col) {
-        cout << "Piece moved to: " << row << " " << col << endl;
+      if (chessBoard[row][col].isEmpty) {
+        if (indexX == row && indexY == col) {
+          cout << "Piece moved to: " << row << " " << col << endl;
 
-        chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
-        chessBoard[row][col].setCurrentBishop(piece);
-        piece->currentSqaure = &chessBoard[row][col];
-        piece->currentPositionX = row;
-        piece->currentPositionY = col;
-        piece->isSelected = false;
+          chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
+          chessBoard[row][col].setCurrentBishop(piece);
+          piece->currentSqaure = &chessBoard[row][col];
+          piece->currentPositionX = row;
+          piece->currentPositionY = col;
+          piece->isSelected = false;
+          break;
+        }
+        row--;
+        col++;
+      } else {
         break;
       }
-      row--;
-      col++;
     }
 
     // bottom left (row + 1 and col - 1)
@@ -53,22 +57,24 @@ void Bishop::bishopMovement(Board chessBoard[][8], Bishop *piece, int indexX,
     col = piece->currentPositionY - 1;
 
     while (row < 8 && col >= 0) {
+      if (chessBoard[row][col].isEmpty) {
+        if (indexX == row && indexY == col) {
+          cout << "Piece moved to: " << row << " : " << col << endl;
 
-      if (indexX == row && indexY == col) {
-        cout << "Piece moved to: " << row << " : " << col << endl;
+          chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
+          chessBoard[row][col].setCurrentBishop(piece);
+          piece->currentSqaure = &chessBoard[row][col];
+          piece->currentPositionX = row;
+          piece->currentPositionY = col;
 
-        chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
-        chessBoard[row][col].setCurrentBishop(piece);
-        piece->currentSqaure = &chessBoard[row][col];
-        piece->currentPositionX = row;
-        piece->currentPositionY = col;
-
-        piece->isSelected = false;
+          piece->isSelected = false;
+          break;
+        }
+        row++;
+        col--;
+      } else {
         break;
       }
-
-      row++;
-      col--;
     }
 
     // top left (row - 1, col - 1)
@@ -76,21 +82,24 @@ void Bishop::bishopMovement(Board chessBoard[][8], Bishop *piece, int indexX,
     col = piece->currentPositionY - 1;
 
     while (row >= 0 && col >= 0) {
-      if (indexX == row && indexY == col) {
-        cout << "Piece moved to: " << row << " : " << col << endl;
+      if (chessBoard[row][col].isEmpty) {
+        if (indexX == row && indexY == col) {
+          cout << "Piece moved to: " << row << " : " << col << endl;
 
-        chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
-        chessBoard[row][col].setCurrentBishop(piece);
-        piece->currentSqaure = &chessBoard[row][col];
-        piece->currentPositionX = row;
-        piece->currentPositionY = col;
+          chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
+          chessBoard[row][col].setCurrentBishop(piece);
+          piece->currentSqaure = &chessBoard[row][col];
+          piece->currentPositionX = row;
+          piece->currentPositionY = col;
 
-        piece->isSelected = false;
+          piece->isSelected = false;
+          break;
+        }
+        row--;
+        col--;
+      } else {
         break;
       }
-
-      row--;
-      col--;
     }
 
     // bottom right (row + 1, col + 1)
@@ -99,21 +108,24 @@ void Bishop::bishopMovement(Board chessBoard[][8], Bishop *piece, int indexX,
     col = piece->currentPositionY + 1;
 
     while (row < 8 && col < 8) {
-      if (indexX == row && indexY == col) {
-        cout << "Piece moved to: " << row << " : " << col << endl;
+      if (chessBoard[row][col].isEmpty) {
+        if (indexX == row && indexY == col) {
+          cout << "Piece moved to: " << row << " : " << col << endl;
 
-        chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
-        chessBoard[row][col].setCurrentBishop(piece);
-        piece->currentSqaure = &chessBoard[row][col];
-        piece->currentPositionX = row;
-        piece->currentPositionY = col;
+          chessBoard[row][col].removePreviousPiece(piece->currentSqaure);
+          chessBoard[row][col].setCurrentBishop(piece);
+          piece->currentSqaure = &chessBoard[row][col];
+          piece->currentPositionX = row;
+          piece->currentPositionY = col;
 
-        piece->isSelected = false;
+          piece->isSelected = false;
+          break;
+        }
+        row++;
+        col++;
+      } else {
         break;
       }
-
-      row++;
-      col++;
     }
 
     piece->isSelected = false;
