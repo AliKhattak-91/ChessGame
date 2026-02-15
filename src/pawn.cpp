@@ -12,7 +12,7 @@ Pawn::Pawn() {
     cout << "FAILED TO LOAD WHITE PAWN TEXTURE" << endl;
   }
   pawnSprite.setTexture(pawnTexture);
-  pawnSprite.setScale(0.9, 0.9);
+  pawnSprite.setScale(0.75, 0.75);
 }
 
 void Pawn::pawnMovement(Board chessboard[][8], Pawn *piece, int indexX,
@@ -43,7 +43,7 @@ void Pawn::pawnMovement(Board chessboard[][8], Pawn *piece, int indexX,
           chessboard[indexX][piece->currentSquare->squareIndices.y]
               .removePreviousPiece(piece->currentSquare);
           chessboard[indexX][piece->currentSquare->squareIndices.y]
-              .setCurrentPiece(piece);
+              .setCurrentPawn(piece);
           piece->currentSquare =
               &chessboard[indexX][piece->currentSquare->squareIndices.y];
           piece->isSelected = false;
@@ -63,7 +63,7 @@ void Pawn::pawnMovement(Board chessboard[][8], Pawn *piece, int indexX,
         chessboard[indexX][piece->currentSquare->squareIndices.y]
             .removePreviousPiece(piece->currentSquare);
         chessboard[indexX][piece->currentSquare->squareIndices.y]
-            .setCurrentPiece(piece);
+            .setCurrentPawn(piece);
         piece->currentSquare =
             &chessboard[indexX][piece->currentSquare->squareIndices.y];
         piece->isSelected = false;
