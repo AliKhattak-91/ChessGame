@@ -1,6 +1,9 @@
 #include "board.hpp"
 #include "bishop.hpp"
+#include "knight.hpp"
 #include "pawn.hpp"
+#include "rook.hpp"
+
 #include <iostream>
 
 using namespace std;
@@ -20,6 +23,22 @@ void Board::setCurrentPawn(Pawn *piece) {
 void Board::setCurrentBishop(Bishop *piece) {
   if (isEmpty) {
     piece->whiteBishopSprite.setPosition(square.getPosition() - Vector2f(3, 0));
+    currentHoldingPieceName = piece->pieceName;
+    isEmpty = false;
+  }
+}
+
+void Board::setCurrentRook(Rook *piece) {
+  if (isEmpty) {
+    piece->whiteRookSprite.setPosition(square.getPosition() - Vector2f(3, 0));
+    currentHoldingPieceName = piece->pieceName;
+    isEmpty = false;
+  }
+}
+
+void Board::setCurrentKnight(Knight *piece) {
+  if (isEmpty) {
+    piece->whiteKnightSprite.setPosition(square.getPosition() - Vector2f(0, 0));
     currentHoldingPieceName = piece->pieceName;
     isEmpty = false;
   }
