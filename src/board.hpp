@@ -1,11 +1,13 @@
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
+#include "knight.hpp"
 #include <SFML/Graphics.hpp>
 
 // Forward declaration for Pawn class
 class Pawn;
 class Bishop;
+class Rook;
 
 class Board {
 
@@ -21,6 +23,12 @@ public:
 
   // Bishop
   void setCurrentBishop(Bishop *piece);
+
+  // Rook
+  void setCurrentRook(Rook *piece);
+
+  // Knight
+  void setCurrentKnight(Knight *piece);
 
   void removePreviousPiece(Board *previousSqaure);
   void getCurrentPiece(Pawn *piece);

@@ -35,7 +35,9 @@ void Pawn::pawnMovement(Board chessboard[][8], Pawn *piece, int indexX,
     if (piece->pawnFirstMove) {
       if (indexX == piece->currentSquare->squareIndices.x - 1 ||
           indexX == piece->currentSquare->squareIndices.x - 2 &&
-              indexY == piece->currentSquare->squareIndices.y) {
+              indexY == piece->currentSquare->squareIndices.y &&
+              chessboard[piece->currentSquare->squareIndices.x - 1][indexY]
+                  .isEmpty) {
 
         // check whether the allowable squares are empty or not
         // ==> move the pawn

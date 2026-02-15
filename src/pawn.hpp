@@ -14,9 +14,6 @@ public:
   bool isSelected = false;
   Board *currentSquare;
 
-  int pieceOrigionalRow;
-  int pieceOrigionalCol = 2;
-
   bool pawnFirstMove = true;
 
   Pawn();
